@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Debug;
 
 namespace simpleAspDotNetCoreWebapp.Pages
 {
@@ -12,7 +13,7 @@ namespace simpleAspDotNetCoreWebapp.Pages
     {
         private ILogger logger = null;
 
-        public AboutModel(ILogger loggerfactory)
+        public AboutModel(ILogger<DebugLogger> loggerfactory)
         {
             this.logger = loggerfactory;
         }
