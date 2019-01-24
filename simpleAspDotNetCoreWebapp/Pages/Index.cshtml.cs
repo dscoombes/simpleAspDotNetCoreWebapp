@@ -24,7 +24,12 @@ namespace simpleAspDotNetCoreWebapp.Pages
             Trace.TraceError("Error message, in the OnGet method for Index.cshtml");
             Trace.TraceWarning("Warning  message, in the OnGet method for Index.cshtml");
             Trace.TraceInformation("Information message, in the OnGet method for Index.cshtml");
-            logger.LogInformation("This is a log message!");
+            logger.LogInformation("OnGet:::::::::Info:::::::::");
+            logger.LogDebug("OnGet:::::::::Debug:::::::::");
+            logger.LogError("OnGet::::::::::::::Error::::");
+            logger.LogWarning("OnGet::::::::::::Warning::::::");
+            logger.LogTrace("OnGet:::::::::::::Trace:::::");
+            logger.LogCritical("OnGet::::::::::::::Critical::::");
         }
     }
 }
