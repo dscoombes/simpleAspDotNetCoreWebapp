@@ -50,6 +50,8 @@ namespace simpleAspDotNetCoreWebapp
                 app.UseHsts();
             }
 
+            ILogger.AddConsole();
+            ILogger.AddDebug();
             ILogger.AddAzureWebAppDiagnostics();
            
             app.UseHttpsRedirection();
