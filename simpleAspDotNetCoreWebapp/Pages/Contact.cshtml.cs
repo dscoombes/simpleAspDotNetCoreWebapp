@@ -4,18 +4,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace simpleAspDotNetCoreWebapp.Pages
 {
     public class ContactModel : PageModel
     {
+        private ILogger logger = null;
+
+        public ContactModel(ILogger loggerfactory)
+        {
+            this.logger = loggerfactory;
+        }
         public void OnGet()
         {
-        System.Diagnostics.Trace.WriteLine("Verbose message, in the OnGet method for Contact.cshtml");
-        System.Diagnostics.Trace.TraceError("Error message, in the OnGet method for Contact.cshtml");
-        System.Diagnostics.Trace.TraceWarning("Warning  message, in the OnGet method for Contact.cshtml");
-        System.Diagnostics.Trace.TraceInformation("Information message, in the OnGet method for Contact.cshtml");
+            logger.LogInformation("Information message from OnGet method on Contact.cshtml page");
+            logger.LogDebug("Debug message from OnGet method on Contact.cshtml page");
+            logger.LogError("Error message from OnGet method on Contact.cshtml page");
+            logger.LogWarning("Warning message from OnGet method on Contact.cshtml page");
+            logger.LogTrace("Trace message from OnGet method on Contact.cshtml page");
+            logger.LogCritical("Critical message from OnGet method on Contact.cshtml page");
         }
     }
 }

@@ -51,7 +51,7 @@ namespace simpleAspDotNetCoreWebapp
             }
 
             ILogger.AddAzureWebAppDiagnostics();
-
+           
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
